@@ -1,13 +1,37 @@
 <head>
   <title>magic blaze events</title>
+  <style>
+    .highlight {
+      background: yellow;
+    }
+  </style>
 </head>
 
 <body>
-{{> helloworld}}
+<section>
+  <h3>Simple Example</h3>
+  {{> helloworld}}
+</section>
+
+<section>
+  <h3>Parent / Child (Event Bubbling)</h3>
+  <p>Doesn't work yet. See code for more info.</p>
+  {{> parent}}
+</section>
 </body>
 
 <template name="helloworld">
   <button onclick={{sayHi}}>Say Hi!</button>
   <button onclick={{reset}}>reset</button>
   <p></p>
+</template>
+
+<template name="parent">
+  <button onclick={{log}}>log</button>
+  {{#each children}}
+    {{>child}}
+  {{/each}}
+</template>
+<template name="child">
+  <button onclick={{highlight}}>child no {{.}}</button>
 </template>
