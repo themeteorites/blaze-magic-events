@@ -27,4 +27,4 @@ Event handlers
   })
 ```
 
-Enjoy! Feedback welcome. Example app given. Magic sauce is hardcoded to "helloworld" template. It is left as an exercise to the reader (or user) to adjust that part of the code.
+Enjoy! Feedback welcome. Example app given.
