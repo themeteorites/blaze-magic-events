@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
   Template.helloworld.events({
     sayHi (e, t) {
-      console.log('event and templateInstance params', e, t)
+      console.log('event and templateInstance params, this binding', e, t, this)
       t.$('p').html('hi there from sayHi() handler!')
     },
     reset (e, t) {

@@ -2,7 +2,6 @@ autoupdate@1.2.1
 base64@1.0.3
 binary-heap@1.0.3
 blaze@2.1.2
-blaze-magic-events@0.0.1
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
@@ -39,8 +38,9 @@ routepolicy@1.0.5
 session@1.1.0
 spacebars@1.0.6
 spacebars-compiler@1.0.6
-stevezhu:lodash@0.1.0
+stevezhu:lodash@3.9.3
 templating@1.1.1
+themeteorites:blaze-magic-events@0.0.1
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3

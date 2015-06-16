@@ -10,7 +10,9 @@
 <body>
 <section>
   <h3>Simple Example</h3>
-  {{> helloworld}}
+  {{#with attr="value"}}
+    {{> helloworld}}
+  {{/with}}
 </section>
 
 <section>
