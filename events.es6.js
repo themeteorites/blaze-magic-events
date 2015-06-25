@@ -1,22 +1,23 @@
-function magicEventHelper (handlerName) {
-  return function () {
-    let f = function (handlerName) {
-      // make event
-      let e = window.event
-      jQuery.event.fix(e)
-
-      // search through view hierarchy for appropriate handler
-      let view = Blaze.getView(this)
-      do {
-        let handler
-        if (view.template && _.find(view.template.__eventMaps, map => handler = map[handlerName])) {
-          return handler.call(view, e)
-        }
-      } while ((view = view.parentView))
-      // no handler found, nothing to do
-    }
-    return '(' + f.toString() + ').bind(this)(\'' + handlerName + '\')'
+function makeMagicEventHelper (handlerName) {
+  return function magicEventHelper () {
+    return 'return __magicEvent.call(this, \'' + handlerName + '\')'
   }
+}
+
+__magicEvent = function (handlerName) {
+  // make event
+  let e = window.event
+  jQuery.event.fix(e)
+
+  // search through view hierarchy for appropriate handler
+  let view = Blaze.getView(this)
+  do {
+    let handler
+    if (view.template && _.find(view.template.__eventMaps, map => handler = map[handlerName])) {
+      return handler.call(view, e)
+    }
+  } while ((view = view.parentView))
+  // no handler found, nothing to do
 }
 
 Meteor.startup(() => {
@@ -29,7 +30,7 @@ Meteor.startup(() => {
         if (name.indexOf(' ') !== -1) {
           return ret
         }
-        ret[name] = magicEventHelper.call(this, name)
+        ret[name] = makeMagicEventHelper(name)
         return ret
       }, {})
       this.helpers(helpers)
