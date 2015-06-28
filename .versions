@@ -15,6 +15,6 @@ ordered-dict@1.0.3
 random@1.0.3
 reactive-var@1.0.5
 stevezhu:lodash@3.9.3
-themeteorites:blaze-magic-events@0.0.1
+themeteorites:blaze-magic-events@0.0.3
 tracker@1.0.7
 underscore@1.0.3

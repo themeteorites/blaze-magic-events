@@ -1,12 +1,12 @@
 function makeMagicEventHelper (handlerName) {
   return function magicEventHelper () {
-    return 'return __magicEvent.call(this, \'' + handlerName + '\')'
+    return 'return __magicEvent.call(this, typeof arguments !== \'undefined\' ? arguments : null, \'' + handlerName + '\')'
   }
 }
 
-__magicEvent = function (handlerName) {
+__magicEvent = function (args, handlerName) {
   // make event
-  let e = window.event
+  let e = args && args[0] || window.event
   jQuery.event.fix(e)
 
   // search through view hierarchy for appropriate handler

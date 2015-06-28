@@ -1,6 +1,6 @@
 Package.describe({
   name: 'themeteorites:blaze-magic-events',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'Adds angular2/react style event handler binding to Blaze.',
   // URL to the Git repository containing the source code for this package.
