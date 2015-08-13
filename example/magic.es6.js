@@ -7,6 +7,19 @@ if (Meteor.isClient) {
     reset (e, t) {
       t.$('p').html('')
     },
+    say (e, t, who, what) {
+      t.$('p').html(`${who} says ${what}`)
+    },
+    incrName() {
+      Session.set('id', Session.get('id') + 1)
+    }
+  })
+
+  Session.setDefault('id', 0)
+  Template.helloworld.helpers({
+    name () {
+      return 'template-' + Session.get('id')
+    }
   })
 
   Template.parent.helpers({
