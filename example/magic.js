@@ -19,6 +19,9 @@ if (Meteor.isClient) {
   Template.helloworld.helpers({
     name () {
       return 'template-' + Session.get('id')
+    },
+    gimmeNull () {
+      return NaN
     }
   })
 

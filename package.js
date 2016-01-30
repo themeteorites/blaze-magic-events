@@ -1,6 +1,6 @@
 Package.describe({
   name: 'themeteorites:blaze-magic-events',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'Adds angular2/react style event handler binding to Blaze.',
   // URL to the Git repository containing the source code for this package.
@@ -11,8 +11,8 @@ Package.describe({
 })
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.1.0.2')
-  api.use(['blaze', 'grigio:babel@0.1.6', 'stevezhu:lodash@3.10.1'], 'client')
-  api.addFiles('events.es6.js', 'client')
+  api.versionsFrom('1.2.1')
+  api.use(['blaze', 'ecmascript', 'stevezhu:lodash@4.0.0'], 'client')
+  api.addFiles('events.js', 'client')
   api.export('__magicEvent')
 })
