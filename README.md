@@ -5,7 +5,7 @@ note: all code is ES6
 
 Template
 
-```
+```html
 <template name="helloworld">
   <button onclick={{sayHi}}>Say Hi!</button>
   <button onclick={{reset}}>reset</button>
@@ -16,7 +16,7 @@ Template
 
 Event handlers
 
-```
+```js
   Template.helloworld.events({
     sayHi (e, t) {
       console.log('event and templateInstance params', e, t)
